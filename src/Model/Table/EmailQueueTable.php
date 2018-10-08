@@ -173,9 +173,9 @@ class EmailQueueTable extends Table
     protected function _initializeSchema(Schema $schema)
     {
         $type = Configure::read('EmailQueue.serialization_type') ?: 'email_queue.serialize';
-        $schema->columnType('template_vars', $type);
-        $schema->columnType('headers', $type);
-        $schema->columnType('attachments', $type);
+        $schema->setColumnType('template_vars', $type);
+        $schema->setColumnType('headers', $type);
+        $schema->setColumnType('attachments', $type);
         
         return $schema;
     }
